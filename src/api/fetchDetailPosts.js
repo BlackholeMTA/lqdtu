@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react'
  function FetchDetailPosts(id) {
     const [info, setInfo] = useState({})
+    const [status, setStatus] = useState()
     // const x = id
     useEffect(() => {
       async function FetchDetailPost() {
@@ -16,6 +17,7 @@ import {React, useState, useEffect} from 'react'
           const responseJSON = await response.json()
           const info = responseJSON
           setInfo(info)
+          // setStatus(info.status)
         } catch (error) {
           console.log(error)
         }

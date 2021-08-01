@@ -19,7 +19,11 @@ axiosClient.interceptors.request.use(async (config) => {
 })
 axiosClient.interceptors.response.use((response) => {
     if (response && response.data) {
-        return response.data
+        return {
+          status: response.status,
+          data: response.data,
+          total: response.headers['content-range']
+        }
     }
     return response
 }, (error) => {

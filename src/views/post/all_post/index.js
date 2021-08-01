@@ -9,6 +9,8 @@ const AllPost = ({match}) => {
   // const user = usersData.find( user => user.id.toString() === match.params.id)
   // const userDetails = user ? Object.entries(user) :
   //   [['id', (<span><CIcon className="text-muted" name="cui-icon-ban" /> Not found</span>)]]
+
+
   const [listPost, setListPost] = useState([])
 
   useEffect(() => {
@@ -19,7 +21,7 @@ const AllPost = ({match}) => {
           method: 'GET',
           redirect: 'follow'
         }
-      const requestUrl = `${url}/news?unit=Trang chủ&page=1&size=50`
+      const requestUrl = `${url}/news?unit=Trang chủ&page=1&size=100`
       const response = await fetch(requestUrl, requestOptions)
       const responseJSON = await response.json()
        console.log(responseJSON)
@@ -49,6 +51,7 @@ const AllPost = ({match}) => {
                 <th>Author</th>
                 <th>Category</th>
                 <th>Time</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>

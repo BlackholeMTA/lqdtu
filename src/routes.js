@@ -42,6 +42,7 @@ const AddPost = React.lazy(() => import('./views/post/add/index'));
 const ListCategory = React.lazy(() => import('./views/post/category/index'));
 const EditPost = React.lazy(() => import('./views/post/edit/index'));
 const EditCate = React.lazy(() => import('./views/post/editCate/index'));
+const PreviewPost = React.lazy(() => import('./views/post/preview/index'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -88,6 +89,7 @@ const routes = [
   { path: '/post/category', exact: true,  name: 'ListCategory', component: ListCategory },
   { path: '/post/edit/:id', exact: true,  name: 'EditPost', component: EditPost },
   { path: '/post/editCate/:id', exact: true,  name: 'EditCate', component: EditCate },
+  { path: '/post/preview', exact: true,  name: 'PreviewPost', component: PreviewPost },
 ];
 
 export default routes;

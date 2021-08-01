@@ -5,6 +5,14 @@ import {Edit, Trash} from 'react-feather'
 import deleteData from 'src/hooks/deleteData'
 import deletePostApi from 'src/api/detelePostApi'
 function Post(props) {
+  const setStatus = stt => {
+    switch (stt) {
+      case 1:
+        return 'Publish'
+      case 0:
+        return 'Unpublish'
+    }
+  }
   const post = props.post
   const [temp, setTemp] = useState()
   const handleDeletePost = (e) => {
@@ -19,6 +27,7 @@ function Post(props) {
         <td>{post.author}</td>
         <td>{post.category_name}</td>
         <td>{toDateString(post.date_created)}</td>
+        <td>{setStatus(post.status)}</td>
         <td style ={{width: '9%'}}><a data-toggle="tooltip" title="Edit" href={`/#/post/edit/${post.id}`} ><Edit></Edit></a> <Trash  style ={{cursor: 'pointer'}} onClick = {handleDeletePost}><a href="#" data-toggle="tooltip" title="Delete"></a></Trash></td>
     </tr>
 

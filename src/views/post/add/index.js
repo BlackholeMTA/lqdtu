@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom'
 import CreatePostApi from 'src/api/createPostApi'
 import {postData} from 'src/hooks/postData'
 import ContentPost from './ContentPost'
+// import Test from './Test'
 const AddPost = () => {
   const [temp, setTemp] = useState()
   const history = useHistory()
@@ -19,7 +20,9 @@ const AddPost = () => {
          <CCardBody>
         <div>
         <div className='invoice-add-wrapper'>
+        {/* <Test></Test> */}
         <ContentPost onSubmit = {handleTodoFormSubmit}/>
+
        {/* <CRow className='invoice-add'>
         <CCol xl={9} md={8} sm={12}>
 
